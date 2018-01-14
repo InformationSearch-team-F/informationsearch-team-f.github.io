@@ -1,1 +1,557 @@
-hello!!!
+<!--
+* 物品管理DBがないバージョン, 決め打ち静的サイト
+* 物品管理DB対応バージョンはindex_tmp.php
+
+-->
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+
+  <!-- SITE TITTLE -->
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>UmaSys</title>
+  <!-- PLUGINS CSS STYLE -->
+  <link href="plugins/jquery-ui/jquery-ui.min.css" rel="stylesheet">
+  <!-- Bootstrap -->
+  <link href="plugins/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link href="plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <!-- Owl Carousel -->
+  <link href="plugins/slick-carousel/slick/slick.css" rel="stylesheet">
+  <link href="plugins/slick-carousel/slick/slick-theme.css" rel="stylesheet">
+  <!-- Fancy Box -->
+  <link href="plugins/fancybox/jquery.fancybox.pack.css" rel="stylesheet">
+  <link href="plugins/jquery-nice-select/css/nice-select.css" rel="stylesheet">
+  <link href="plugins/seiyria-bootstrap-slider/dist/css/bootstrap-slider.min.css" rel="stylesheet">
+  <!-- CUSTOM CSS -->
+  <link href="css/style.css" rel="stylesheet">
+
+  <!-- FAVICON -->
+  <link href="img/favicon.png" rel="shortcut icon">
+
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+</head>
+
+
+<body class="body-wrapper">
+
+<section>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<nav class="navbar navbar-expand-lg  navigation">
+					<a class="navbar-brand" href="index.html">
+                        <img src="images/logo.svg" width=120 alt="">
+					</a>
+					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+					</button>
+					<div class="collapse navbar-collapse" id="navbarSupportedContent">
+						<ul class="navbar-nav main-nav ">
+							<li class="nav-item active">
+								<a class="nav-link" href="index.html">Home</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="dashboard.html">Ranking</a>
+							</li>
+							<!--
+							<li class="nav-item dropdown dropdown-slide">
+								<a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+									Pages <span><i class="fa fa-angle-down"></i></span>
+								</a>
+								<div class="dropdown-menu dropdown-menu-right">
+									<a class="dropdown-item" href="category.html">Category</a>
+									<a class="dropdown-item" href="single.html">Single Page</a>
+									<a class="dropdown-item" href="store-single.html">Store Single</a>
+									<a class="dropdown-item" href="dashboard.html">Dashboard</a>
+									<a class="dropdown-item" href="user-profile.html">User Profile</a>
+									<a class="dropdown-item" href="submit-coupon.html">Submit Coupon</a>
+									<a class="dropdown-item" href="blog.html">Blog</a>
+									<a class="dropdown-item" href="single-blog.html">Single Post</a>
+								</div>
+							</li>-->
+							<!--
+							<li class="nav-item dropdown dropdown-slide">
+								<a class="nav-link dropdown-toggle" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+									Listing <span><i class="fa fa-angle-down"></i></span>
+								</a>
+								<div class="dropdown-menu dropdown-menu-right">
+									<a class="dropdown-item" href="#">Action</a>
+									<a class="dropdown-item" href="#">Another action</a>
+									<a class="dropdown-item" href="#">Something else here</a>
+								</div>
+                            </li>
+                            -->
+						</ul>
+						<ul class="navbar-nav ml-auto mt-10">
+							<li class="nav-item">
+								<a class="nav-link login-button" href="index.html">Login</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link add-button" href="#"><i class="fa fa-plus-circle"></i> Add Listing</a>
+							</li>
+						</ul>
+                        </ul>
+					</div>
+				</nav>
+			</div>
+		</div>
+	</div>
+</section>
+
+<!--===============================
+=            Hero Area            =
+================================-->
+
+<section class="hero-area bg-1 text-center overly">
+	<!-- Container Start -->
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<!-- Header Contetnt -->
+				<div class="content-block">
+					<h1>Let's revive the dead stocks in your Lab.</h1>
+                   <!-- <p>Find new value for the dead stocks and recommend new usage to you.</p>-->
+                    <p>死蔵品から新たな価値を見出し、新しい使い方を提案します。</p>
+				</div>
+				<!-- Advance Search -->
+				<div class="advance-search">
+					<form action="#">
+						<div class="row">
+							<!-- Store Search -->
+							<div class="col-lg-30 col-md-12">
+								<div class="block d-flex">
+									<input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" id="search" placeholder="Search for store">
+									<!-- Search Button -->
+									<button class="btn btn-main" style="height: 50px;">SEARCH</button>
+								</div>
+							</div>
+						</div>
+					</form>
+					
+				</div>
+				
+			</div>
+		</div>
+	</div>
+	<!-- Container End -->
+</section>
+
+<!--===================================
+=            Client Slider            =
+====================================-->
+
+
+<!--===========================================
+=            New deals section            =
+============================================-->
+
+<section class="popular-deals section bg-gray" style="padding-bottom: 10px;">
+	<div class="container">
+
+		<div class="row">
+			<div class="col-md-12">
+				<div class="section-title">
+					<h2>New items</h2>
+					<p>研究室に新しい備品が入荷しました。</p>
+                </div>
+			</div>
+		</div>
+
+		<div class="row">
+			<!-- offer 01 -->
+			<div class="col-sm-12 col-lg-3">
+				<!-- product card -->
+                <div class="product-item bg-light">
+                    <div class="card" style="min-height:40rem;">
+                        <div class="thumb-content" style="text-align:center;">
+                            <!-- <div class="price">$200</div> -->
+                            <a href="psvr.html">
+                                <img class="card-img-top img-fluid" src="images/products/products-1.jpg" alt="Card image cap">
+                            </a>
+                        </div>
+                        <div class="card-body">
+                            <h4 class="card-title"><a href="psvr.html">PlayStation VR PlayStation Camera 同梱版</a></h4>
+                            <ul class="list-inline product-meta">
+                                <li class="list-inline-item">
+                                    <a href=""><i class="fa fa-folder-open-o"></i>Electronics</a>
+                                </li>
+                                <li class="list-inline-item">
+                                    <a href=""><i class="fa fa-calendar"></i>26th December</a>
+                                </li>
+                            </ul>
+                            <p class="card-text">利用可能です。</p>
+                            <div class="product-ratings">
+                                <ul class="list-inline">
+                                    <li class="list-inline-item selected"><i class="fa fa-star"></i></li>
+                                    <li class="list-inline-item selected"><i class="fa fa-star"></i></li>
+                                    <li class="list-inline-item selected"><i class="fa fa-star"></i></li>
+                                    <li class="list-inline-item selected"><i class="fa fa-star"></i></li>
+                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+			</div>
+			<div class="col-sm-12 col-lg-3">
+				<!-- product card -->
+<div class="product-item bg-light">
+	<div class="card" style="min-height:40rem;">
+		<div class="thumb-content" style="text-align:center;">
+			<!-- <div class="price">$200</div> -->
+			<a href="googlehome.html">
+				<img class="card-img-top img-fluid" src="images/products/products-2.jpg" alt="Card image cap">
+			</a>
+		</div>
+		<div class="card-body">
+		    <h4 class="card-title"><a href="googlehome.html">Google Home</a></h4>
+		    <ul class="list-inline product-meta">
+		    	<li class="list-inline-item">
+		    		<a href=""><i class="fa fa-folder-open-o"></i>Electronics</a>
+		    	</li>
+		    	<li class="list-inline-item">
+		    		<a href=""><i class="fa fa-calendar"></i>26th December</a>
+		    	</li>
+		    </ul>
+		    <p class="card-text">利用可能です。</p>
+		    <div class="product-ratings">
+		    	<ul class="list-inline">
+		    		<li class="list-inline-item selected"><i class="fa fa-star"></i></li>
+		    		<li class="list-inline-item selected"><i class="fa fa-star"></i></li>
+		    		<li class="list-inline-item selected"><i class="fa fa-star"></i></li>
+		    		<li class="list-inline-item selected"><i class="fa fa-star"></i></li>
+		    		<li class="list-inline-item"><i class="fa fa-star"></i></li>
+		    	</ul>
+		    </div>
+		</div>
+	</div>
+</div>
+
+
+
+			</div>
+			<div class="col-sm-12 col-lg-3">
+				<!-- product card -->
+<div class="product-item bg-light">
+	<div class="card" style="min-height:40rem;">
+		<div class="thumb-content" style="text-align:center;">
+			<!-- <div class="price">$200</div> -->
+			<a href="">
+				<img class="card-img-top img-fluid" src="images/products/products-3.jpg" alt="Card image cap">
+			</a>
+		</div>
+		<div class="card-body">
+		    <h4 class="card-title"><a href="">マイクロソフト Surface Pro 4</a></h4>
+		    <ul class="list-inline product-meta">
+		    	<li class="list-inline-item">
+		    		<a href=""><i class="fa fa-folder-open-o"></i>Electronics</a>
+		    	</li>
+		    	<li class="list-inline-item">
+		    		<a href=""><i class="fa fa-calendar"></i>26th December</a>
+		    	</li>
+		    </ul>
+		    <p class="card-text">xxさんが1/15~2/9まで使用予定です。</p>
+		    <div class="product-ratings">
+		    	<ul class="list-inline">
+		    		<li class="list-inline-item selected"><i class="fa fa-star"></i></li>
+		    		<li class="list-inline-item selected"><i class="fa fa-star"></i></li>
+		    		<li class="list-inline-item selected"><i class="fa fa-star"></i></li>
+		    		<li class="list-inline-item selected"><i class="fa fa-star"></i></li>
+		    		<li class="list-inline-item"><i class="fa fa-star"></i></li>
+		    	</ul>
+		    </div>
+		</div>
+	</div>
+</div>
+
+
+
+			</div>
+            <div class="col-sm-12 col-lg-3">
+                <!-- product card -->
+                <div class="product-item bg-light">
+                    <div class="card" style="min-height:40rem;">
+                        <div class="thumb-content" style="text-align:center;">
+                            <!-- <div class="price">$200</div> -->
+                            <a href="">
+                                <img class="card-img-top img-fluid" src="images/products/products-4.jpg" alt="Card image cap">
+                            </a>
+                        </div>
+                        <div class="card-body">
+                            <h4 class="card-title"><a href="">ふつうのLinuxプログラミング 第2版 Linuxの仕組みから学べるgccプログラミングの王道</a></h4>
+                            <ul class="list-inline product-meta">
+                                <li class="list-inline-item">
+                                    <a href=""><i class="fa fa-folder-open-o"></i>Books</a>
+                                </li>
+                                <li class="list-inline-item">
+                                    <a href=""><i class="fa fa-calendar"></i>26th December</a>
+                                </li>
+                            </ul>
+                            <p class="card-text">xxさんが1/15~2/9まで使用予定です。</p>
+                            <div class="product-ratings">
+                                <ul class="list-inline">
+                                    <li class="list-inline-item selected"><i class="fa fa-star"></i></li>
+                                    <li class="list-inline-item selected"><i class="fa fa-star"></i></li>
+                                    <li class="list-inline-item selected"><i class="fa fa-star"></i></li>
+                                    <li class="list-inline-item selected"><i class="fa fa-star"></i></li>
+                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+            </div>
+
+		</div>
+
+
+	</div>
+</section>
+
+
+
+
+
+
+
+
+<!--===========================================
+=            Popular deals section            =
+============================================-->
+
+<section class="popular-deals section bg-gray" style="padding-top: 30px; padding-bottom: 10px;">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="section-title">
+                    <h2>Popular items</h2>
+                    <p>研究室内の多くの人たちが使用しています。あなたも使ってみませんか。</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <!-- offer 01 -->
+            <div class="col-sm-12 col-lg-3">
+                <!-- product card -->
+                <div class="product-item bg-light">
+                    <div class="card" style="min-height:40rem;">
+                        <div class="thumb-content" style="text-align:center;">
+                            <!-- <div class="price">$200</div> -->
+                            <a href="psvr.html">
+                                <img class="card-img-top img-fluid" src="images/products/products-1.jpg" alt="Card image cap">
+                            </a>
+                        </div>
+                        <div class="card-body">
+                            <h4 class="card-title"><a href="psvr.html">PlayStation VR PlayStation Camera 同梱版</a></h4>
+                            <ul class="list-inline product-meta">
+                                <li class="list-inline-item">
+                                    <a href=""><i class="fa fa-folder-open-o"></i>Electronics</a>
+                                </li>
+                                <li class="list-inline-item">
+                                    <a href=""><i class="fa fa-calendar"></i>26th December</a>
+                                </li>
+                            </ul>
+                            <p class="card-text">利用可能です。</p>
+                            <div class="product-ratings">
+                                <ul class="list-inline">
+                                    <li class="list-inline-item selected"><i class="fa fa-star"></i></li>
+                                    <li class="list-inline-item selected"><i class="fa fa-star"></i></li>
+                                    <li class="list-inline-item selected"><i class="fa fa-star"></i></li>
+                                    <li class="list-inline-item selected"><i class="fa fa-star"></i></li>
+                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+            </div>
+            <div class="col-sm-12 col-lg-3">
+                <!-- product card -->
+                <div class="product-item bg-light">
+                    <div class="card" style="min-height:40rem;">
+                        <div class="thumb-content" style="text-align:center;">
+                            <!-- <div class="price">$200</div> -->
+                            <a href="googlehome.html">
+                                <img class="card-img-top img-fluid" src="images/products/products-2.jpg" alt="Card image cap">
+                            </a>
+                        </div>
+                        <div class="card-body">
+                            <h4 class="card-title"><a href="googlehome.html">Google Home</a></h4>
+                            <ul class="list-inline product-meta">
+                                <li class="list-inline-item">
+                                    <a href=""><i class="fa fa-folder-open-o"></i>Electronics</a>
+                                </li>
+                                <li class="list-inline-item">
+                                    <a href=""><i class="fa fa-calendar"></i>26th December</a>
+                                </li>
+                            </ul>
+                            <p class="card-text">利用可能です。</p>
+                            <div class="product-ratings">
+                                <ul class="list-inline">
+                                    <li class="list-inline-item selected"><i class="fa fa-star"></i></li>
+                                    <li class="list-inline-item selected"><i class="fa fa-star"></i></li>
+                                    <li class="list-inline-item selected"><i class="fa fa-star"></i></li>
+                                    <li class="list-inline-item selected"><i class="fa fa-star"></i></li>
+                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+            </div>
+            <div class="col-sm-12 col-lg-3">
+                <!-- product card -->
+                <div class="product-item bg-light">
+                    <div class="card" style="min-height:40rem;">
+                        <div class="thumb-content" style="text-align:center;">
+                            <!-- <div class="price">$200</div> -->
+                            <a href="">
+                                <img class="card-img-top img-fluid" src="images/products/products-9.jpg" alt="Card image cap">
+                            </a>
+                        </div>
+                        <div class="card-body">
+                            <h4 class="card-title"><a href="">Apple Watch Sport 42mm</a></h4>
+                            <ul class="list-inline product-meta">
+                                <li class="list-inline-item">
+                                    <a href=""><i class="fa fa-folder-open-o"></i>Electronics</a>
+                                </li>
+                                <li class="list-inline-item">
+                                    <a href=""><i class="fa fa-calendar"></i>26th December</a>
+                                </li>
+                            </ul>
+                            <p class="card-text">xxさんが1/20~2/28まで使用予定です。</p>
+                            <div class="product-ratings">
+                                <ul class="list-inline">
+                                    <li class="list-inline-item selected"><i class="fa fa-star"></i></li>
+                                    <li class="list-inline-item selected"><i class="fa fa-star"></i></li>
+                                    <li class="list-inline-item selected"><i class="fa fa-star"></i></li>
+                                    <li class="list-inline-item selected"><i class="fa fa-star"></i></li>
+                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+            </div>
+            <div class="col-sm-12 col-lg-3">
+                <!-- product card -->
+                <div class="product-item bg-light">
+                    <div class="card" style="min-height:40rem;">
+                        <div class="thumb-content" style="text-align:center;">
+                            <!-- <div class="price">$200</div> -->
+                            <a href="">
+                                <img class="card-img-top img-fluid" src="images/products/products-10.jpg" alt="Card image cap">
+                            </a>
+                        </div>
+                        <div class="card-body">
+                            <h4 class="card-title"><a href="">キングジム ラベルライター「テプラ」PRO SR670</a></h4>
+                            <ul class="list-inline product-meta">
+                                <li class="list-inline-item">
+                                    <a href=""><i class="fa fa-folder-open-o"></i>Electronics</a>
+                                </li>
+                                <li class="list-inline-item">
+                                    <a href=""><i class="fa fa-calendar"></i>26th December</a>
+                                </li>
+                            </ul>
+                            <p class="card-text">xxさんが1/20~2/28まで使用予定です。</p>
+                            <div class="product-ratings">
+                                <ul class="list-inline">
+                                    <li class="list-inline-item selected"><i class="fa fa-star"></i></li>
+                                    <li class="list-inline-item selected"><i class="fa fa-star"></i></li>
+                                    <li class="list-inline-item selected"><i class="fa fa-star"></i></li>
+                                    <li class="list-inline-item selected"><i class="fa fa-star"></i></li>
+                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<!--============================
+=            Footer            =
+=============================-->
+
+
+<!-- Footer Bottom -->
+<footer class="footer-bottom">
+    <!-- Container Start -->
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-6 col-12">
+          <!-- Copyright -->
+          <div class="copyright">
+              <p>情報検索特論</p>
+              <p>Copyright © 2017. All Rights Reserved</p>
+          </div>
+        </div>
+        <!--<div class="col-sm-6 col-12">
+
+          <ul class="social-media-icons text-right">
+              <li><a class="fa fa-facebook" href=""></a></li>
+              <li><a class="fa fa-twitter" href=""></a></li>
+              <li><a class="fa fa-pinterest-p" href=""></a></li>
+              <li><a class="fa fa-vimeo" href=""></a></li>
+          </ul>
+        </div>-->
+      </div>
+    </div>
+    <!-- Container End -->
+    <!-- To Top -->
+    <div class="top-to">
+      <a id="top" class="" href=""><i class="fa fa-angle-up"></i></a>
+    </div>
+</footer>
+
+  <!-- JAVASCRIPTS -->
+  <script src="plugins/jquery/jquery.min.js"></script>
+  <script src="plugins/jquery-ui/jquery-ui.min.js"></script>
+  <script src="plugins/tether/js/tether.min.js"></script>
+  <script src="plugins/raty/jquery.raty-fa.js"></script>
+  <script src="plugins/bootstrap/dist/js/popper.min.js"></script>
+  <script src="plugins/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="plugins/seiyria-bootstrap-slider/dist/bootstrap-slider.min.js"></script>
+  <script src="plugins/slick-carousel/slick/slick.min.js"></script>
+  <script src="plugins/jquery-nice-select/js/jquery.nice-select.min.js"></script>
+  <script src="plugins/fancybox/jquery.fancybox.pack.js"></script>
+  <script src="plugins/smoothscroll/SmoothScroll.min.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCC72vZw-6tGqFyRhhg5CkF2fqfILn2Tsw"></script>
+  <script src="js/scripts.js"></script>
+
+</body>
+
+</html>
+
+
+
